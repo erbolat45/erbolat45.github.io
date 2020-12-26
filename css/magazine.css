@@ -1,0 +1,355 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	background: #fff;
+	font-family: CENTURY GOTHIC,sans-serif;
+}
+
+/*header logo*/
+header {
+	position: relative;
+	top: 0;
+	left: 0;
+	width: 100%;
+	justify-content: space-between;
+	align-items: center;
+	text-align: center;
+	transition: 0.6s;
+	padding: 10px 5%;
+	z-index: 1000;
+}
+
+
+header .logo {
+	position: relative;
+	font-weight: 700;
+	color: #2d2d2d;
+	text-decoration: none;
+	font-size: 2em;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	transition: 0.6s;
+}
+/*header navs*/
+
+header ul {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+header ul li {
+	position: relative;
+	list-style: none;
+}
+header ul li {
+	position: relative;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #2d2d2d;
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+header ul li.active_nav span {
+	transform: scaleX(1);
+}
+header ul li span {
+	position: absolute;
+	display: block;
+	background: #4d4d4d;
+}
+header ul li span {
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 2px;
+	transform: scaleX(0);
+	transform-origin: center;
+	transition: 0.6s ease;
+}
+header ul li:hover span {
+	transform: scaleX(1);
+	transform-origin: center;
+	transition: 0.25s ease-in-out;
+}
+/*content*/
+.product {
+	margin-top: 7vh;
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 5px;
+	align-content: center;
+	align-items: center;
+	justify-content: center;
+	width: 80%;
+	margin-left: 10%;
+	margin-right: 10%;
+	position: relative;
+}
+.product .itemBox {
+	position: relative;
+	object-fit: cover;
+	width: 250px;
+	height: 300px;
+	box-shadow: 2.5px 10px 10px rgba(0,0,0,0.1);
+	margin-left: 10px;
+	margin-bottom: 25px;
+	text-align: center;
+	color: #0009;
+	border-radius: 15px; 
+	transition: box-shadow 0.5s ease-in-out;
+}
+.product .itemBox:hover {
+	box-shadow: 10px 40px 40px rgba(0,0,0,0.1);
+	background: #f3f3f199;
+}
+.product .itemBox h2 {
+	position: relative;
+	opacity: 0;
+	right: 50px;
+	transition: 0.7s ease-in-out;
+}
+.product .itemBox:hover h2 {
+	right: 0;
+	opacity: 1;
+}
+.product .itemBox a {
+	position: absolute;
+	display: flex;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 55%;
+	height: 35px;
+	border-radius:  25px 0 0 25px;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	color: #f7f7f2;
+	background: #2d2d2d;
+	opacity: 0;
+	transition: 0.5s;
+	padding: 6.5px 0;
+}
+.product .itemBox span {
+	position: absolute;
+	left: 85%;
+	top: 50%;
+	transform: translate(-85%,-50%);
+	display: flex;
+	height: 37px;
+	border-radius: 0 25px 25px 0;
+	padding: 6.5px 3px;
+	margin-right: 3px;
+	background: white;
+	font-weight: 700;
+	color: #2d2d2d;
+	transition: 0.1s;
+	opacity: 0;
+}
+.product .itemBox:hover a,.product .itemBox:hover span {
+	opacity: 1;
+}
+/*br*/
+.br {
+	position: relative;
+	height: auto;
+	width: 100%;
+	background: #fff;
+	color: #2d2d2d;
+	text-align: center;
+	margin-top: -35px;
+	margin-bottom: 15px;
+	z-index: -13;
+}
+.br p {
+	text-align: center;
+	font-size: calc(25px + 20 * (100vw/1440));
+}
+.br p span:nth-child(1) {
+	color: #000;
+}
+.br p span:nth-child(2) {
+	color: #999;
+}
+/*more*/
+.more {
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	background: #f7f7f2;
+	width: 270px;
+	min-height: 75%;
+	z-index: 1000;
+	display: none;
+	box-shadow: 0 0 100px #666;
+	justify-content: space-between;
+	border-radius: 15px;
+	border-bottom: 5px solid #000;
+	transition: 0.7s ease-in-out;
+}
+.more.active {
+	display: flex;
+}
+.more .close {
+	position: absolute;
+	right: 15px;
+	top: 15px;
+	font-size: 45px;
+	height: 45px;
+	transform: rotate(45deg);
+	transition: 0.6s;
+	cursor: pointer;
+	font-weight: 100;
+	color: #3d3d3d8c;
+	z-index: 20;
+}
+.more .close:hover {
+	color: #1d1d1d;
+}
+.more .text {
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	justify-content: center;
+	margin-left: 25px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-right: 25px;
+}
+.more .text h2 {
+	margin-top: 10%;
+	font-size: calc(35px + 25 *(100vw/1440));
+	text-align: center;
+	font-family: CENTURY GOTHIC,sans-serif;
+    font-weight: 500;
+    color: #2d2d2d;
+}
+.more .text p {
+	margin-top: 3%;
+	font-size: calc(7px + 5*(100vw/1440));
+	text-align: right;
+}
+.more .text h3 {
+	font-size: calc(15px + 15 * (100vw/1440));
+}
+.more .text ul li {
+	margin-left: 15px;
+	list-style: none;
+	font-size: calc(10px + 5 *(100vw/1440));
+}
+.more .text a {
+	position: relative;
+	display: flex;
+	text-decoration: none;
+	color: #f7f7f2;
+	align-items: center;
+	justify-content: center;
+	border-radius: 25px;
+	margin-top: 15px;
+	background: #2d2d2d;
+	width: 75px;
+	left: 50%;
+	transform: translate(-50%);
+	height: 35px;
+	transition: 0.5s;
+}
+.more .text a:hover {
+	box-shadow: 3px 0 1px #999,
+				-3px 0 1px #999,
+				0 3px 1px #999,
+				0 -3px 1px #999;
+}
+.more .text a span {
+	color:#008000;
+}
+.more .text .pros {
+	background: #000;
+	color: #fff;
+	width: calc(31px + 30 * (100vw/1440));
+}
+@media (max-width: 810px) {
+	.more .text {
+		transform: translate(0);
+		margin-right: 0;
+	}
+}
+@media (max-width: 373px) {
+	.more {
+		width: 75%;
+	}
+}
+@media (max-height: 450px) {
+	.more {
+		min-height: 75%;
+	}
+	.more .text {
+		margin-top: 0;
+	}
+}
+/*preloader*/
+.preloader
+	{
+		position: fixed;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background: #fff;
+		z-index: 10000000;
+		transition: 0.5s ease-in-out all;
+		opacity: 1;
+		visibility: visible;
+	}
+	svg {
+		color: #000;
+		font-weight: 700;
+		letter-spacing: 2px;
+		position: absolute;
+		top: 50%;
+		left:50%;
+		transform: translate(-50%,-50%);
+		animation: svg_one 0.3s linear forwards 4s;
+}
+	svg text {
+		font-size: calc(45px + 50*(100vw/1440));
+		fill: transparent;
+		stroke-width:2px;
+		stroke: #000;
+		stroke-linejoin: round;
+		stroke-dasharray: 1000;
+		stroke-dashoffset:1000;
+		animation: svg 4.9s ease-in-out forwards;
+	}
+	@keyframes svg {
+		to {
+			stroke-dashoffset:0;
+			text-shadow: 0 0 2px #999,
+			0 0 4px #999,
+			0 0 8px #999;
+		}
+	}
+	@keyframes svg_one {
+		to {
+			opacity: 0;
+		}
+}
+	.done {
+		opacity: 0;
+		z-index: -1000;
+	}
+	/*SCROLLBAR*/
+::-webkit-scrollbar
+{
+	width:0.5em; 
+}
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #3d3d3d;
+}
